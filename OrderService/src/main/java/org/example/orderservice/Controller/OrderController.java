@@ -34,24 +34,26 @@ public class OrderController {
     public Order createOrder(@RequestBody Order order) {
 
 
-        ServiceInstance userService = discoveryClient.getInstances("UserService").get(0);
-        Object userResponse = restClient.get()
-                .uri(userService.getUri() + "/users/" + order.getUserId())
-                .retrieve()
-                .body(Object.class);
+        // using eureka only
 
-        ServiceInstance productService = discoveryClient.getInstances("ProductService").get(0);
-        Object productResponse = restClient.get()
-                .uri(productService.getUri() + "/products/" + order.getProductId())
-                .retrieve()
-                .body(Object.class);
-
-        if (userResponse == null) {
-            throw new RuntimeException("User not found");
-        }
-        if (productResponse == null) {
-            throw new RuntimeException("Product not found");
-        }
+//        ServiceInstance userService = discoveryClient.getInstances("UserService").get(0);
+//        Object userResponse = restClient.get()
+//                .uri(userService.getUri() + "/users/" + order.getUserId())
+//                .retrieve()
+//                .body(Object.class);
+//
+//        ServiceInstance productService = discoveryClient.getInstances("ProductService").get(0);
+//        Object productResponse = restClient.get()
+//                .uri(productService.getUri() + "/products/" + order.getProductId())
+//                .retrieve()
+//                .body(Object.class);
+//
+//        if (userResponse == null) {
+//            throw new RuntimeException("User not found");
+//        }
+//        if (productResponse == null) {
+//            throw new RuntimeException("Product not found");
+//        }
 
 
 //        // Example: Get user info from User Service
@@ -63,7 +65,11 @@ public class OrderController {
 //        if (product == null) {
 //            throw new RuntimeException("Product not found");
 //        }
-        return orderService.saveOrder(order);
+       // return orderService.saveOrder(order);
+
+
+        // using fegin
+        return orderService.createOrder(order);
     }
 
     @GetMapping("/{id}")
