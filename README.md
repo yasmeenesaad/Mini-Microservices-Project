@@ -9,6 +9,7 @@ This project consists of three simple Spring Boot microservices that communicate
 - [Microservices Overview](#microservices-overview)
 - [API Endpoints](#api-endpoints)
 - [Testing Using Postman](#testing-using-postman)
+- [Additional Tasks](#additional-tasks)
 
 ## Technologies
 - Java 17
@@ -128,7 +129,7 @@ You can use Postman to test the microservices. Below are the example request bod
      ```json
      {
          "userId": 1,
-         "productId": 101,
+         "productId": 1,
          "quantity": 2
      }
      ```
@@ -152,4 +153,20 @@ To access the H2 database console:
 
 1. Open the browser and go to `http://localhost:<port>/h2-console`.
 2. Use the JDBC URL `jdbc:h2:mem:testdb`, Username `sa`, and leave the Password field empty.
+
+
+## Additional Tasks
+- **Gateway**
+- **Routing**:
+  - Based on `Path`, `Query`, and `Method`.
+- **Integration with Discovery Server**:
+  - Seamless integration with the service discovery mechanism.
+- **Filters**:
+  - `AddRequestHeader`: Adds a header to the request.
+  - `AddRequestHeaderIfNotPresent`: Adds a header to the request only if it is not already present.
+  - `AddResponseHeader`: Adds a header to the response.
+- **Rate Limiting**:
+  - Controls the number of requests allowed within a certain timeframe.
+- **Circuit Breaker**:
+  - Provides fault tolerance by opening the circuit when failures reach a certain threshold, preventing further requests to the failing service.
 
