@@ -9,7 +9,7 @@ This project consists of three simple Spring Boot microservices that communicate
 - [Microservices Overview](#microservices-overview)
 - [API Endpoints](#api-endpoints)
 - [Testing Using Postman](#testing-using-postman)
-- [Additional Tasks](#Additional-Tasks)
+- [Additional Tasks](#additional-tasks)
 
 ## Technologies
 - Java 17
@@ -129,7 +129,7 @@ You can use Postman to test the microservices. Below are the example request bod
      ```json
      {
          "userId": 1,
-         "productId": 101,
+         "productId": 1,
          "quantity": 2
      }
      ```
