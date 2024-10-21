@@ -155,7 +155,7 @@ To access the H2 database console:
 2. Use the JDBC URL `jdbc:h2:mem:testdb`, Username `sa`, and leave the Password field empty.
 
 
-## Aditional Tasks
+## Additional Tasks
 - **Gateway**
 - **Routing**:
   - Based on `Path`, `Query`, and `Method`.
